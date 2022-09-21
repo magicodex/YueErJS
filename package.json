@@ -1,4 +1,7 @@
 {
   "name": "yueerjs",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "YueErJS 用于生成 HTML 页面",
+  "license": "MIT"
 }
