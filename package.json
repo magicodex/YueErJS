@@ -2,6 +2,6 @@
   "name": "yueerjs",
   "version": "1.0.0",
   "main": "index.js",
-  "description": "YueErJS 用于生成 HTML 页面",
+  "description": "组件化生成 HTML 代码",
   "license": "MIT"
 }

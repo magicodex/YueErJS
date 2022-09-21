@@ -1,69 +1,26 @@
 # YueErJS
 
 ## 示例代码
-定义组件
+
+### 定义组件
 ```
-'use strict'
-var yer = require("yueerjs");
-
-//
-// form类型
-//
-yer.component('$form', function(opts, callback) {
-  this.appendBody('<form action="' + opts.url + '" method="post">\n');
-  callback();
-  this.appendBody('</form>\n');
-});
-
-//
-// input类型
-//
-yer.component('$input', function(opts) {
-  this.appendBody('<input type="text" name="' + opts.name +
-    '" placeholder="' + opts.placeholder + '"/><br>\n');
+yer.component('$Jumbotron', function(opts) {
+  this.appendBody('<div class="jumbotron jumbotron-fluid">\n');
+  this.appendBody('<div class="container">\n');
+  this.appendBody('<h1 class="display-4">' + opts.title + '</h1>\n');
+  this.appendBody('<p class="lead">' + opts.content + '</p>\n');
+  this.appendBody('</div>\n</div>\n');
 }, {
-  styles: ['input.css'],
-  scripts: ['input.js']
+  styles: ['/js/bootstrap.css']
 });
-
-//
-// submit类型
-//
-yer.component('$submit', function(opts) {
-  this.appendBody('<input type="submit" value="' + opts.label + '"/><br>\n');
-}, {
-  dependencies: ['$input'],
-  styles: ['submit.css'],
-  scripts: ['submit.js']
-});
-
-module.exports = {
-  $form: yer.components.$form,
-  $input: yer.components.$input,
-  $submit: yer.components.$submit
-};
-
 ```
 
-生成页面
+### 生成页面
 ```
-var html = yer.html();
-
-html.$form({url: '/test'}, () => {
-  html.$input({
-    name: 'code',
-    placeholder: '请输入代码...'
-  });
-
-  html.$input({
-    name: 'name',
-    placeholder: '请输入名称...'
-  });
-
-  html.$submit({
-    label: '提交'
-  });
-});
-
-console.info(html.render());
+var yerHtml = yer.html();
+yerHtml.$Jumbotron({ title : 'Welcome', content: 'Hello, world!' });
+var html = yerHtml.html();
 ```
+
+## 开源协议
+MIT
