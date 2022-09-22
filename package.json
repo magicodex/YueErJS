@@ -9,5 +9,8 @@
     "type": "git",
     "url": "https://github.com/magicodex/YueErJS"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  }
 }

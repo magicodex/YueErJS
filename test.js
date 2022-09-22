@@ -33,20 +33,20 @@ yer.component('$submit', function(opts) {
 // 生成页面
 //
 
-var html = yer.html();
+var yerHtml = yer.html();
 
-html.$form({url: '/test'}, () => {
-  html.$input({
+yerHtml.$form({url: '/test'}, () => {
+  yerHtml.$input({
     name: 'code',
     placeholder: '请输入代码...'
   });
 
-  html.$input({
+  yerHtml.$input({
     name: 'name',
     placeholder: '请输入名称...'
   });
 
-  html.$submit({
+  yerHtml.$submit({
     label: '提交'
   });
 });
@@ -55,7 +55,7 @@ html.$form({url: '/test'}, () => {
 // 检查结果
 //
 
-assert.equal(html.render(),
+assert.equal(yerHtml.render(),
 `<!doctype html>
 <html lang="zh-CN">
 <head>
