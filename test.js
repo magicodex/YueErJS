@@ -52,7 +52,7 @@ html.$form({url: '/test'}, () => {
 });
 
 //
-// 测试代码
+// 检查结果
 //
 
 assert.equal(html.render(),

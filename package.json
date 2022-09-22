@@ -1,7 +1,13 @@
 {
+  "author": "mh.z",
   "name": "yueerjs",
-  "version": "1.0.0",
-  "main": "index.js",
   "description": "组件化生成 HTML 代码",
-  "license": "MIT"
+  "keywords": ["html"],
+  "license": "MIT",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magicodex/YueErJS"
+  },
+  "main": "index.js"
 }

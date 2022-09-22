@@ -1,5 +1,10 @@
 # YueErJS
 
+## 安装依赖
+```
+npm install --save-dev yueerjs
+```
+
 ## 示例代码
 
 ### 定义组件
