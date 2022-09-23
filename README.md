@@ -1,6 +1,8 @@
 # YueErJS
 组件化生成 HTML 代码。
 
+![月儿](https://github.com/magicodex/YueErJS/blob/main/logo.png "月儿")
+
 ## 安装依赖
 ```
 npm install --save-dev yueerjs
