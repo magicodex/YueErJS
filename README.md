@@ -12,7 +12,7 @@ npm install --save-dev yueerjs
 ```
 var yer = require('yueerjs');
 
-yer.component('$Jumbotron', function(opts) {
+yer.component('$jumbotron', function(opts) {
   this.appendBody('<div class="jumbotron jumbotron-fluid">\n');
   this.appendBody('<div class="container">\n');
   this.appendBody('<h1 class="display-4">' + opts.title + '</h1>\n');
@@ -28,7 +28,7 @@ yer.component('$Jumbotron', function(opts) {
 var yer = require('yueerjs');
 
 var yerHtml = yer.html();
-yerHtml.$Jumbotron({ title : 'Welcome', content: 'Hello, world!' });
+yerHtml.$jumbotron({ title : 'Welcome', content: 'Hello, world!' });
 var html = yerHtml.render();
 
 console.info(html);

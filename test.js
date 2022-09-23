@@ -33,7 +33,7 @@ yer.component('$submit', function(opts) {
 // 生成页面
 //
 
-var yerHtml = yer.html();
+var yerHtml = yer.html({ title: 'YueErJS' });
 
 yerHtml.$form({url: '/test'}, () => {
   yerHtml.$input({
@@ -59,6 +59,9 @@ assert.equal(yerHtml.render(),
 `<!doctype html>
 <html lang="zh-CN">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YueErJS</title>
 <link rel="stylesheet" href="input.css">
 <link rel="stylesheet" href="submit.css">
 </head>
