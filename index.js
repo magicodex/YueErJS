@@ -1,5 +1,5 @@
 'use strict'
 
-var yer = require('./lib/core');
+var yer = require('./lib/html');
 
 module.exports = yer;
