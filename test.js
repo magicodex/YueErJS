@@ -7,13 +7,13 @@ var yer = require('./index');
 // 定义组件
 //
 
-yer.component('$form', function(opts, callback) {
+yer.registerComponent('$form', function(opts, callback) {
   this.appendBody('<form action="' + opts.url + '" method="post">\n');
   callback();
   this.appendBody('</form>\n');
 });
 
-yer.component('$input', function(opts) {
+yer.registerComponent('$input', function(opts) {
   this.appendBody('<input type="text" name="' + opts.name +
     '" placeholder="' + opts.placeholder + '"/><br>\n');
 }, {
@@ -21,7 +21,7 @@ yer.component('$input', function(opts) {
   scripts: ['input.js']
 });
 
-yer.component('$submit', function(opts) {
+yer.registerComponent('$submit', function(opts) {
   this.appendBody('<input type="submit" value="' + opts.label + '"/><br>\n');
 }, {
   dependencies: ['$input'],

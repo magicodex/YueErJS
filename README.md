@@ -14,7 +14,7 @@ npm install --save-dev yueerjs
 ```
 var yer = require('yueerjs');
 
-yer.component('$jumbotron', function(opts) {
+yer.registerComponent('$jumbotron', function(opts) {
   this.appendBody('<div class="jumbotron jumbotron-fluid">\n');
   this.appendBody('<div class="container">\n');
   this.appendBody('<h1 class="display-4">' + opts.title + '</h1>\n');

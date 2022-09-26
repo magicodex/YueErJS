@@ -1,5 +1,13 @@
 'use strict'
 
-var yer = require('./lib/html');
+var html = require('./lib/html');
+var data = require('./lib/data')
 
-module.exports = yer;
+module.exports = {
+  htmlConfig: html.config,
+  html: html.html,
+  registerComponent: html.registerComponent,
+  dataConfig: data.config,
+  data: data.data,
+  registerHandler: data.registerHandler
+};

@@ -2,7 +2,9 @@
   "author": "mh.z",
   "name": "yueerjs",
   "description": "组件化生成 HTML 代码",
-  "keywords": ["html"],
+  "keywords": [
+    "html"
+  ],
   "license": "MIT",
   "version": "1.1.2",
   "repository": {
