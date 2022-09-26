@@ -1,0 +1,22 @@
+{
+  "name": "yueerjs",
+  "version": "1.1.2",
+  "description": "支持组件化封装 HTML 代码片段，以便快速生成页面以及更改/读取表单的数据",
+  "keywords": [
+    "html"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magicodex/YueErJS.git"
+  },
+  "author": "mh.z",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magicodex/YueErJS/issues"
+  },
+  "homepage": "https://github.com/magicodex/YueErJS#readme"
+}
