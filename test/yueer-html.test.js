@@ -1,6 +1,6 @@
 
 //
-// 定义组件
+// 注册组件
 //
 
 yer.registerComponent('$form', function(opts, callback) {
