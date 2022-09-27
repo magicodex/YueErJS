@@ -1,13 +1,17 @@
 {
   "name": "yueerjs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "支持组件化封装 HTML 代码片段，以便快速生成页面以及更改/读取表单的数据",
   "keywords": [
     "html"
   ],
   "main": "index.js",
+  "files": [
+    "lib/",
+    "index.js"
+  ],
   "scripts": {
-    "test": "node ./test/index.js"
+    "test": "node test/index.js"
   },
   "repository": {
     "type": "git",
