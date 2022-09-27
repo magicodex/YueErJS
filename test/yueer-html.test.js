@@ -37,7 +37,7 @@ yer.registerComponent('$submit', function(opts) {
 // 测试用例
 //
 
-QUnit.test('[yueer-html] render', function(assert) {
+QUnit.test('yueer-html.test', function(assert) {
   var yerHtml = yer.html({ title: 'YueErJS' });
 
   yerHtml.$form({ url: '/login' }, () => {

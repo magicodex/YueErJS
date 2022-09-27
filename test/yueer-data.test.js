@@ -25,7 +25,7 @@ yer.registerHandler('password', {
 // 测试用例
 //
 
-QUnit.test('[yueer-data] get/set', function(assert) {
+QUnit.test('yueer-data.test', function(assert) {
   var jqBaseElement = $('#qunit-fixture');
   jqBaseElement.append('<input data-name="login.userName" data-type="input"/>');
   jqBaseElement.append('<input data-name="login.password" data-type="password"/>');
