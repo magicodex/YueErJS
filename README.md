@@ -1,7 +1,7 @@
 # YueErJS
 支持组件化封装 HTML 代码片段，以便快速生成页面以及更改/读取表单的数据。
 
-![明月几时有？](https://github.com/magicodex/YueErJS/blob/main/logo.png "明月几时有？")
+![明月几时有？](https://s3.bmp.ovh/imgs/2022/09/27/1d1efabc869f8556.png "明月几时有？")
 
 ## 安装依赖
 ```
