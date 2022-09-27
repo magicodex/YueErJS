@@ -1,7 +1,7 @@
 "use strict";
 
-var yerData = require('./lib/yueer-html');
-var yerHtml = require('./lib/yueer-data');
+var yerHtml = require('./lib/yueer-html');
+var yerData = require('./lib/yueer-data');
 
 module.exports = {
   htmlConfig: yerHtml.htmlConfig,
