@@ -20,6 +20,20 @@ yerHtml.appendBody('<h1>Hello, YueErJS!</h1>');
 
 // 渲染页面
 var html = yerHtml.render();
+
+>>>>>>>>>> HTML代码 >>>>>>>>>>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YueErJS</title>
+</head>
+<body>
+<h1>Hello, YueErJS!</h1>
+</body>
+</html>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ```
 *查看更多文档请点击* [yueer-html-doc.md](https://github.com/magicodex/YueErJS/blob/main/doc/yueer-html-doc.md)
 
