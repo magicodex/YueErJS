@@ -81,3 +81,74 @@ QUnit.test('yueer-html.test', function(assert) {
 
   assert.strictEqual(actual, expected);
 });
+
+//
+//
+//
+QUnit.test('yueer-html.htmlUtil.isNullOrUndefined', function(assert) {
+  //
+  assert.strictEqual(yer.htmlUtil.isNullOrUndefined("1"), false);
+  assert.strictEqual(yer.htmlUtil.isNullOrUndefined(1), false);
+
+  //
+  assert.strictEqual(yer.htmlUtil.isNullOrUndefined(null), true);
+  assert.strictEqual(yer.htmlUtil.isNullOrUndefined(undefined), true);
+});
+
+//
+//
+//
+QUnit.test('yueer-html.html.style', function(assert) {
+  var yerHtml = yer.html({ title: 'YueErJS' });
+
+  yerHtml.style('style1.css');
+  yerHtml.style('style2.css');
+  yerHtml.style('style2.css');
+
+  assert.strictEqual(yerHtml.styles.length, 2);
+  assert.strictEqual(yerHtml.styles[0].indexOf('style1.css') >= 0, true);
+  assert.strictEqual(yerHtml.styles[1].indexOf('style2.css') >= 0, true);
+});
+
+//
+//
+//
+QUnit.test('yueer-html.html.script', function(assert) {
+  var yerHtml = yer.html({ title: 'YueErJS' });
+
+  yerHtml.script('script1.css');
+  yerHtml.script('script2.css');
+  yerHtml.script('script2.css');
+
+  assert.strictEqual(yerHtml.scripts.length, 2);
+  assert.strictEqual(yerHtml.scripts[0].indexOf('script1.css') >= 0, true);
+  assert.strictEqual(yerHtml.scripts[1].indexOf('script2.css') >= 0, true);
+});
+
+//
+//
+//
+QUnit.test('yueer-html.html.appendHead', function(assert) {
+  var yerHtml = yer.html({ title: 'YueErJS' });
+
+  yerHtml.appendHead('<style>h1{}</style>');
+  yerHtml.appendHead('<style>h2{}</style>');
+
+  var length = yerHtml.head.length;
+  assert.strictEqual(yerHtml.head[length - 2], '<style>h1{}</style>');
+  assert.strictEqual(yerHtml.head[length - 1], '<style>h2{}</style>');
+});
+
+//
+//
+//
+QUnit.test('yueer-html.html.appendBody', function(assert) {
+  var yerHtml = yer.html({ title: 'YueErJS' });
+
+  yerHtml.appendBody('<p>Hello, world.</p>');
+  yerHtml.appendBody('<p>Hello, YueErJS.</p>');
+
+  assert.strictEqual(yerHtml.body[0], '<p>Hello, world.</p>');
+  assert.strictEqual(yerHtml.body[1], '<p>Hello, YueErJS.</p>');
+});
+
