@@ -42,3 +42,102 @@ QUnit.test('yueer-data.test', function(assert) {
     'login.password': '123456'
   });
 });
+
+//
+//
+//
+QUnit.test('yueer-data.data.util.isNullOrUndefined', function(assert) {
+  //
+  assert.strictEqual(yer.data.util.isNullOrUndefined("1"), false);
+  assert.strictEqual(yer.data.util.isNullOrUndefined(1), false);
+
+  //
+  assert.strictEqual(yer.data.util.isNullOrUndefined(null), true);
+  assert.strictEqual(yer.data.util.isNullOrUndefined(undefined), true);
+});
+
+//
+//
+//
+QUnit.test('yueer-data.Data.convertExpressionToSelector', function(assert) {
+  // 数组
+  {
+    var actual = yer.Data.convertExpressionToSelector(['field1', 'field2']);
+
+    assert.deepEqual(actual, ['[data-name="field1"]', '[data-name="field2"]']);
+  }
+
+  // "*"结尾
+  {
+    var actual = yer.Data.convertExpressionToSelector("field*");
+
+    assert.deepEqual(actual, ['[data-name^="field"]']);
+  }
+
+  // "*"字符串
+  {
+    var actual = yer.Data.convertExpressionToSelector("*");
+
+    assert.deepEqual(actual, ['[data-name]']);
+  }
+});
+
+//
+//
+//
+QUnit.test('yueer-data.Data.prefix', function(assert) {
+  {
+    var actual = yer.Data.prefix({
+      field1: 'field1Value',
+      field2: 'field2Value'
+    }, 'user.');
+
+    assert.strictEqual(actual['user.field1'], 'field1Value');
+    assert.strictEqual(actual['user.field2'], 'field2Value');
+  }
+
+  // null
+  {
+    var actual = yer.Data.prefix(null, 'user.');
+
+    assert.strictEqual(actual, null);
+  }
+
+  // 字符串
+  {
+    var actual = yer.Data.prefix('1', 'user.');
+
+    assert.strictEqual(actual, '1');
+  }
+});
+
+//
+//
+//
+QUnit.test('yueer-data.Data.unprefix', function(assert) {
+  {
+    var actual = yer.Data.unprefix({
+      'user.field1': 'field1Value',
+      'user.field2': 'field2Value',
+      'remark': 'remark1'
+    }, 'user.');
+
+    assert.strictEqual(actual['field1'], 'field1Value');
+    assert.strictEqual(actual['field2'], 'field2Value');
+    assert.strictEqual(actual['remark'], 'remark1');
+  }
+
+  // null
+  {
+    var actual = yer.Data.unprefix(null, 'user.');
+
+    assert.strictEqual(actual, null);
+  }
+
+  // 字符串
+  {
+    var actual = yer.Data.unprefix('1', 'user.');
+
+    assert.strictEqual(actual, '1');
+  }
+});

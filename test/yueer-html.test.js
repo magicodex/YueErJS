@@ -85,14 +85,14 @@ QUnit.test('yueer-html.test', function(assert) {
 //
 //
 //
-QUnit.test('yueer-html.htmlUtil.isNullOrUndefined', function(assert) {
+QUnit.test('yueer-html.html.util.isNullOrUndefined', function(assert) {
   //
-  assert.strictEqual(yer.htmlUtil.isNullOrUndefined("1"), false);
-  assert.strictEqual(yer.htmlUtil.isNullOrUndefined(1), false);
+  assert.strictEqual(yer.html.util.isNullOrUndefined("1"), false);
+  assert.strictEqual(yer.html.util.isNullOrUndefined(1), false);
 
   //
-  assert.strictEqual(yer.htmlUtil.isNullOrUndefined(null), true);
-  assert.strictEqual(yer.htmlUtil.isNullOrUndefined(undefined), true);
+  assert.strictEqual(yer.html.util.isNullOrUndefined(null), true);
+  assert.strictEqual(yer.html.util.isNullOrUndefined(undefined), true);
 });
 
 //
