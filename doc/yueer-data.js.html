@@ -1,4 +1,32 @@
-"use strict";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: yueer-data.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: yueer-data.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 
 (function(global, namespace) {
   var _yer;
@@ -38,7 +66,7 @@
    */
   YueErData.get = function(expression, skipNull) {
     // 表达式只能是字符串或数组
-    if ((typeof expression !== 'string') && !(expression instanceof Array)) {
+    if ((typeof expression !== 'string') &amp;&amp; !(expression instanceof Array)) {
       throw new Error('argument#1 "expression" required string or Array');
     }
 
@@ -53,7 +81,7 @@
       || (expression.charAt(expression.length - 1) === '*')) {
       var elementValues = {};
 
-      for (var index = 0; index < elements.length; index++) {
+      for (var index = 0; index &lt; elements.length; index++) {
         var element = elements[index];
         var dataName = element.getAttribute(this.nameAttributeName);
         // 获取元素的值
@@ -66,7 +94,7 @@
 
       return elementValues;
     } else {
-      if (elements.length <= 0) {
+      if (elements.length &lt;= 0) {
         return null;
       }
 
@@ -84,7 +112,7 @@
    */
   YueErData.set = function(expression, value, defaultNull) {
     // 表达式只能是字符串或数组
-    if ((typeof expression !== 'string') && !(expression instanceof Array)) {
+    if ((typeof expression !== 'string') &amp;&amp; !(expression instanceof Array)) {
       throw new Error('argument#1 "expression" required string or Array');
     }
 
@@ -94,7 +122,7 @@
     // 查找指定选择器对应的元素
     var elements = this.queryElementBySelector(selector);
 
-    if (elements.length <= 0) {
+    if (elements.length &lt;= 0) {
       return;
     }
 
@@ -103,7 +131,7 @@
       || (expression.charAt(expression.length - 1) === '*')) {
       value = (value || {});
 
-      for (var index = 0; index < elements.length; index++) {
+      for (var index = 0; index &lt; elements.length; index++) {
         var element = elements[index];
         var dataName = element.getAttribute(this.nameAttributeName);
         var elementValue = value[dataName];
@@ -201,7 +229,7 @@
    */
   YueErData.queryElementBySelector = function(selector) {
     // 表达式只能是字符串或数组
-    if ((typeof selector !== 'string') && !(selector instanceof Array)) {
+    if ((typeof selector !== 'string') &amp;&amp; !(selector instanceof Array)) {
       throw new Error('argument#1 "selector" required string or Array');
     }
 
@@ -224,7 +252,7 @@
    */
   YueErData.convertExpressionToSelector = function(expression) {
     // 表达式只能是字符串或数组
-    if ((typeof expression !== 'string') && !(expression instanceof Array)) {
+    if ((typeof expression !== 'string') &amp;&amp; !(expression instanceof Array)) {
       throw new Error('argument#1 "expression" required string or Array');
     }
 
@@ -237,7 +265,7 @@
       expressionArray = [expression];
     }
 
-    for (var index = 0; index < expressionArray.length; index++) {
+    for (var index = 0; index &lt; expressionArray.length; index++) {
       var expressionStr = expressionArray[index];
 
       if (expressionStr !== '') {
@@ -334,7 +362,7 @@
     if (['input', 'textarea'].includes(tagName)) {
       var inputType = element.getAttribute('type');
 
-      if (tagName === 'input' && (['radio', 'checkbox'].includes(inputType))) {
+      if (tagName === 'input' &amp;&amp; (['radio', 'checkbox'].includes(inputType))) {
         throw new Error('defaultHandler not support the tag "input[type=' + inputType + ']"');
       }
 
@@ -363,7 +391,7 @@
     }
 
     if (['input', 'textarea'].includes(tagName)) {
-      if (tagName === 'input' && (['radio', 'checkbox'].includes(inputType))) {
+      if (tagName === 'input' &amp;&amp; (['radio', 'checkbox'].includes(inputType))) {
         throw new Error('defaultHandler not support the tag "input[type=' + inputType + ']"');
       }
 
@@ -416,3 +444,26 @@
   _yer.registerHandler = registerHandler;
   _yer.data.util = YueErUtil;
 })((typeof window !== 'undefined' ? window : this), 'yer');
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#YueErData-convertExpressionToSelector">YueErData-convertExpressionToSelector</a></li><li><a href="global.html#YueErData-createData">YueErData-createData</a></li><li><a href="global.html#YueErData-defaultHandler-getValue">YueErData-defaultHandler-getValue</a></li><li><a href="global.html#YueErData-defaultHandler-setValue">YueErData-defaultHandler-setValue</a></li><li><a href="global.html#YueErData-doGetElementValue">YueErData-doGetElementValue</a></li><li><a href="global.html#YueErData-doSetElementValue">YueErData-doSetElementValue</a></li><li><a href="global.html#YueErData-get">YueErData-get</a></li><li><a href="global.html#YueErData-getDataHandlerByElement">YueErData-getDataHandlerByElement</a></li><li><a href="global.html#YueErData-prefix">YueErData-prefix</a></li><li><a href="global.html#YueErData-queryElementBySelector">YueErData-queryElementBySelector</a></li><li><a href="global.html#YueErData-registerHandler">YueErData-registerHandler</a></li><li><a href="global.html#YueErData-set">YueErData-set</a></li><li><a href="global.html#YueErData-unprefix">YueErData-unprefix</a></li><li><a href="global.html#YueErHtml-appendBody">YueErHtml-appendBody</a></li><li><a href="global.html#YueErHtml-appendHead">YueErHtml-appendHead</a></li><li><a href="global.html#YueErHtml-createHtml">YueErHtml-createHtml</a></li><li><a href="global.html#YueErHtml-install">YueErHtml-install</a></li><li><a href="global.html#YueErHtml-registerComponent">YueErHtml-registerComponent</a></li><li><a href="global.html#YueErHtml-render">YueErHtml-render</a></li><li><a href="global.html#YueErHtml-script">YueErHtml-script</a></li><li><a href="global.html#YueErHtml-style">YueErHtml-style</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Dec 25 2022 14:58:06 GMT+0800 (中国标准时间)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

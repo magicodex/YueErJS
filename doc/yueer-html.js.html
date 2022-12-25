@@ -1,4 +1,32 @@
-"use strict";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: yueer-html.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: yueer-html.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 
 (function(global, namespace) {
   var _yer;
@@ -45,7 +73,7 @@
     var key = 'style:' + url;
 
     if (!(key in this.indexes)) {
-      var tag = '<link rel="stylesheet" href="' + url + '">';
+      var tag = '&lt;link rel="stylesheet" href="' + url + '">';
 
       this.indexes[key] = tag;
       this.styles.push(tag);
@@ -65,7 +93,7 @@
     var key = 'script:' + url;
 
     if (!(key in this.indexes)) {
-      var tag = '<script src="' + url + '"></script>';
+      var tag = '&lt;script src="' + url + '">&lt;/script>';
 
       this.indexes[key] = tag;
       this.scripts.push(tag);
@@ -110,7 +138,7 @@
 
     var dependencies = component.dependencies;
     // 安装组件
-    for (var index = 0; index < dependencies.length; index++) {
+    for (var index = 0; index &lt; dependencies.length; index++) {
       var dependencyComponentName = dependencies[index];
       var dependencyComponent = YueErHtml.components[dependencyComponentName];
 
@@ -123,14 +151,14 @@
 
     var styles = component.styles;
     // 添加样式
-    for (var index = 0; index < styles.length; index++) {
+    for (var index = 0; index &lt; styles.length; index++) {
       var tag = styles[index];
       this.style(tag);
     }
 
     var scripts = component.scripts;
     // 添加脚本
-    for (var index = 0; index < scripts.length; index++) {
+    for (var index = 0; index &lt; scripts.length; index++) {
       var tag = scripts[index];
       this.script(tag);
     }
@@ -143,31 +171,31 @@
    */
   YueErHtml.render = function() {
     var html = [];
-    html.push('<!doctype html>\n<html lang="zh-CN">\n<head>\n');
+    html.push('&lt;!doctype html>\n&lt;html lang="zh-CN">\n&lt;head>\n');
 
     // head标签
-    for (var index = 0; index < this.head.length; index++) {
+    for (var index = 0; index &lt; this.head.length; index++) {
       var tag = this.head[index];
       html.push(tag + '\n');
     }
 
     // link标签
-    for (var index = 0; index < this.styles.length; index++) {
+    for (var index = 0; index &lt; this.styles.length; index++) {
       var tag = this.styles[index];
       html.push(tag + '\n');
     }
 
     // body标签
-    html.push('</head>\n<body>\n');
+    html.push('&lt;/head>\n&lt;body>\n');
     html = html.concat(this.body);
 
     // script标签
-    for (var index = 0; index < this.scripts.length; index++) {
+    for (var index = 0; index &lt; this.scripts.length; index++) {
       var tag = this.scripts[index];
       html.push(tag + '\n');
     }
 
-    html.push('</body>\n</html>');
+    html.push('&lt;/body>\n&lt;/html>');
     return html.join('');
   };
 
@@ -188,14 +216,14 @@
     opts = (opts || {});
     var charset = (opts.charset || "utf-8");
     // 规定字符编码
-    yerHtml.appendHead('<meta charset="' + charset + '">');
+    yerHtml.appendHead('&lt;meta charset="' + charset + '">');
     // 支持响应式布局
-    yerHtml.appendHead('<meta name="viewport" content="width=device-width, initial-scale=1">');
+    yerHtml.appendHead('&lt;meta name="viewport" content="width=device-width, initial-scale=1">');
 
     // 设置标题
     var title = opts.title;
     if (!YueErUtil.isNullOrUndefined(title)) {
-      yerHtml.appendHead('<title>' + title + '</title>');
+      yerHtml.appendHead('&lt;title>' + title + '&lt;/title>');
     }
 
     return yerHtml;
@@ -240,4 +268,26 @@
   _yer.html = createHtml;
   _yer.registerComponent = registerComponent;
   _yer.html.util = YueErUtil;
-})((typeof window !== 'undefined' ? window : this), 'yer');
+})((typeof window !== 'undefined' ? window : this), 'yer');</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#YueErData-convertExpressionToSelector">YueErData-convertExpressionToSelector</a></li><li><a href="global.html#YueErData-createData">YueErData-createData</a></li><li><a href="global.html#YueErData-defaultHandler-getValue">YueErData-defaultHandler-getValue</a></li><li><a href="global.html#YueErData-defaultHandler-setValue">YueErData-defaultHandler-setValue</a></li><li><a href="global.html#YueErData-doGetElementValue">YueErData-doGetElementValue</a></li><li><a href="global.html#YueErData-doSetElementValue">YueErData-doSetElementValue</a></li><li><a href="global.html#YueErData-get">YueErData-get</a></li><li><a href="global.html#YueErData-getDataHandlerByElement">YueErData-getDataHandlerByElement</a></li><li><a href="global.html#YueErData-prefix">YueErData-prefix</a></li><li><a href="global.html#YueErData-queryElementBySelector">YueErData-queryElementBySelector</a></li><li><a href="global.html#YueErData-registerHandler">YueErData-registerHandler</a></li><li><a href="global.html#YueErData-set">YueErData-set</a></li><li><a href="global.html#YueErData-unprefix">YueErData-unprefix</a></li><li><a href="global.html#YueErHtml-appendBody">YueErHtml-appendBody</a></li><li><a href="global.html#YueErHtml-appendHead">YueErHtml-appendHead</a></li><li><a href="global.html#YueErHtml-createHtml">YueErHtml-createHtml</a></li><li><a href="global.html#YueErHtml-install">YueErHtml-install</a></li><li><a href="global.html#YueErHtml-registerComponent">YueErHtml-registerComponent</a></li><li><a href="global.html#YueErHtml-render">YueErHtml-render</a></li><li><a href="global.html#YueErHtml-script">YueErHtml-script</a></li><li><a href="global.html#YueErHtml-style">YueErHtml-style</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Dec 25 2022 14:58:06 GMT+0800 (中国标准时间)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
